@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Trading Game</title>
+    <script type="text/javascript">
+        function showFields() {
+            var content = document.getElementById('additionalFields');
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        }
+
+        function showCompFields() {
+            var content = document.getElementById('additionalCompFields');
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        }
+
+        function showChangePassword() {
+            var content = document.getElementById('additionalPasswordFields');
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        }
+
+        function buyStock() {
+            var content = document.getElementById('BuyFields');
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        }
+
+
+        function sellStock() {
+            var content = document.getElementById('SellFields');
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        }
+
+        function showEndGameMenu() {
+            var content = document.getElementById('endGameFields');
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        }
+        </script>
+        <style>
+                #main_header{
+                        color: rgb(43, 42, 104);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-family: "Impact";
+                        font-size: 40px;
+                }
+                #dashboard{
+                        border: 1px solid #b0e816;
+                        padding: 5px;
+                        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                        background-color: #325d31;
+                        color: rgb(240, 240, 250);
+                }
+                        /* Container styles */
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Button styles */
+        .button-container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2a6f9b;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Button hover effect */
+        .button-container button:hover {
+            background-color: #1e3a8a;
+        }
+        .endbutton-container{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+                margin-top: 20px;
+        }
+        .endbutton-container button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #9d5084;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .endbutton-container button:hover {
+            background-color: #ef470f;
+        }
+        #password_options{
+                font-family: "Courier";
+                font-size: 18px; 
+                color: rgb(28, 17, 95);
+                margin: 5px;
+        }
+
+        #changePassword_submit_button {
+                margin-top: 10px; 
+                padding: 5px 10px; 
+                background-color: #105fc7;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-family: "Courier";
+                margin-left: 10px; 
+                align-self: flex-start; 
+        }
+
+        #changePassword_submit_button:hover {
+                background-color: #111311;
+        }
+
+        #admin_note{
+            color: rgb(246, 49, 9);
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            font-family: "Arial";
+            font-size: 15px;
+        }
+        </style>
+</head>
+<body>
+
+        <div>
+                <h1 id = "main_header">Stock Trading Game</h1>
+        </div>
+        <div>
+                <h3 id="dashboard">My Dashboard: </h3>
+        </div>
+
+
+
+<div class="button-container">
+        <button onclick="showChangePassword()">Change Password</button>
+        <button onclick="showFields()">View My Portfolio</button>
+        <button onclick="showCompFields()">View My Competitor's Portfolio</button>
+        <button onclick="buyStock()">Buy Stock</button>
+        <button onclick="sellStock()">Sell Stock</button> 
+
+</div>
+
+<div class="endbutton-container">
+        <button onclick="showEndGameMenu()">End Game</button>   
+</div>
+
+<div id="additionalFields" style="display:none;">
+        <form id = "password_options" action = http://localhost:3000/portfolios/getmyportfolio method = get >
+                <div>
+                        <label for username>
+                                Player Name : 
+                        </label>
+                        <input type= "text" name = "username">
+                </div>
+
+                <div>
+                        <label for gameID>
+                                Game ID: 
+                        </label>
+
+                        <input type= "text" name = "gameID">
+                </div>
+
+                <div>
+                        <button id = "changePassword_submit_button" type = submit>
+                                Submit
+                        </button>
+                </div>
+        </form>
+</div>
+
+
+<div id="additionalCompFields" style="display:none;">
+        <form id = "password_options" action = http://localhost:3000/portfolios/getCompetitorportfolio method = get >
+                <div>
+                        <label for username>
+                                Competitor Name : 
+                        </label>
+                        <input type= "text" name = "username">
+                </div>
+
+                <div>
+                        <label for gameID>
+                                Game ID: 
+                        </label>
+
+                        <input type= "password" name = "gameID">
+                </div>
+
+                <div>
+                        <button id = "changePassword_submit_button" type = submit>
+                                Submit
+                        </button>
+                </div>
+        </form>
+</div>
+
+<div id="additionalPasswordFields" style="display:none;">
+        <form id = "password_options" action = http://localhost:3000/players/changePassword method = post >
+                <div>
+                        <label class = "password_fields" for username >
+                                Player Name : 
+                        </label>
+                        <input type= "text"  name = "username">
+                </div>
+
+                <div>
+                        <label class = "password_fields" for oldpassword>
+                                Old Password: 
+                        </label>
+                        <input type= "password"  name = "oldpassword">
+                </div>
+
+                <div>
+                        <label class = "password_fields" for newpassword>
+                                New Password: 
+                        </label>
+                        <input type= "password" name = "newpassword">
+                </div>
+
+                <div>
+                        <button id ="changePassword_submit_button" type = submit>
+                                Submit
+                        </button>
+                </div>
+        </form>
+</div>
+
+<div id="BuyFields" style="display:none;">
+        <form id = "password_options" action = http://localhost:3000/portfolios/buy method = post >
+                <div>
+                        <label for username>
+                                Player Name : 
+                        </label>
+                        <input type= "text" id = "buy_options" name = "username">
+                </div>
+
+                <div>
+                        <label for gameID>
+                                Verify your game ID: 
+                        </label>
+                        <input type= "text" id = "buy_options" name = "gameID">
+                </div>
+
+                <div>
+                        <label for ticker>
+                                Ticker: 
+                        </label>
+                        <input type= "text" id = "buy_options" name = "ticker">
+                </div>
+
+                <div>
+                        <label for quantity>
+                                Quanity: 
+                        </label>
+                        <input type= "text" id = "buy_options" name = "quantity">
+                </div>
+
+                <div>
+                        <button id = "changePassword_submit_button" type = submit>
+                                Buy
+                        </button>
+                </div>
+        </form>
+</div>
+
+<div id="SellFields" style="display:none;">
+        <form id = "password_options" action = http://localhost:3000/portfolios/sell method = post >
+                <div>
+                        <label for username>
+                                Player Name : 
+                        </label>
+                        <input type= "text" id = "buy_options" name = "username">
+                </div>
+
+                <div>
+                        <label for gameID>
+                                Verify your game ID: 
+                        </label>
+                        <input type= "text" id = "buy_options" name = "gameID">
+                </div>
+
+                <div>
+                        <label for ticker>
+                                Ticker: 
+                        </label>
+                        <input type= "text" id = "buy_options" name = "ticker">
+                </div>
+
+                <div>
+                        <label for quantity>
+                                Quanity: 
+                        </label>
+                        <input type= "text" id = "buy_options" name = "quantity">
+                </div>
+
+                <div>
+                        <button id ="changePassword_submit_button" type = submit>
+                                Sell
+                        </button>
+                </div>
+        </form>
+</div>
+
+
+
+<div id="endGameFields" style="display:none;">
+        <form id = "password_options" action = http://localhost:3000/games/end method = get >
+
+                <div>
+                        <h2 id = "admin_note">
+                                Note: Only an Admin Can End this Game. 
+                        </h2>
+                </div>
+                <div>
+                        <label for admincode>
+                                Admin Code: 
+                        </label>
+                        <input type= "password" id = "end_game_options" name = "admincode">
+                </div>
+
+                <div>
+                        <label for gameID>
+                                Give the Game ID you want to end: 
+                        </label>
+                        <input type= "text" id = "end_game_options" name = "gameID">
+                </div>
+
+                <div>
+                        <button id = "changePassword_submit_button" type = submit>
+                                Proceed
+                        </button>
+                </div>
+        </form>
+</div>
+
+</body>
+</html>

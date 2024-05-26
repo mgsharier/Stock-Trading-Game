@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+        <head> 
+                <title>
+                        creategame
+                </title>
+                <link rel = "stylesheet" href = "style.css"/>
+        </head>
+
+        <body>
+                <div>
+                        <h1 class = "game_title">
+                                Stock Trading Game
+                        </h1>
+                </div>
+
+                <div id = "create_game_header">
+                        <h2>
+                                Let's Create a Game:
+                        </h2>
+                </div>
+                
+                <div>
+                        <form id = "game_creation_credentials" action = http://localhost:3000/createGame method = post >
+                                <div>
+                                        <label class = "game_name" for gamename>
+                                                Game Name : 
+                                        </label>
+                                        <input type= "text"  name = "gamename">
+                                </div>
+
+                                <div>
+                                        <label class ="game_name" for admincode>
+                                                Admin Code : 
+                                        </label>
+
+                                        <input type= "password"  name = "admincode">
+                                </div>
+
+                                <div>
+                                        <button type="submit" id="create_button">
+                                            Create Game
+                                        </button>
+                                    </div>
+                        </form>
+                </div>
+        </body>      
+</html>
+
+
+

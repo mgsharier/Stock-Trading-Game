@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+        <head> 
+                <title>
+                        initialcash
+                </title>
+                <style>
+                        #initialCash_header{
+                                color: rgb(44, 107, 201);
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-family: "Impact";
+                                font-size: 30px;  
+                        }
+                        #initialCash {
+                                display: flex;
+                                flex-direction: column; 
+                                align-items: center; 
+                                margin-top: 20px;
+                        }
+                        .initialCash_credentials {
+                                font-family: "Courier";
+                                font-size: 18px; 
+                                color: rgb(207, 170, 26);
+                                margin: 5px;
+                        }
+                        input[type="text"],
+                        input[type="password"] {
+                        width: 150px; 
+                        padding: 5px;
+                        border-radius: 2px;
+                        border: 2px solid #7571b65c;
+                        margin-bottom: 10px;
+                        }
+
+                        input[type = "password"] {
+                                margin-left: 44px
+                        }
+
+                        #initialCash_button {
+                        margin-top: 10px; 
+                        padding: 5px 10px; 
+                        background-color: #538f61;
+                        color: white;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        font-family: "Courier";
+                        margin-left: 10px; 
+                        align-self: flex-start; 
+                        }
+
+                        #initialCash_button:hover {
+                                background-color: #40136b;
+                        }
+
+                </style>
+        </head>
+
+        <body>
+                <div>
+                        <h2 id = "initialCash_header">
+                                Please select the initial cash for each player
+                        </h2>
+                </div>
+                
+                <div>
+                        <form id = "initialCash" action = http://localhost:3000/portfolios/giveInitialcash method = post >
+                                <div>
+                                        <label for gameID class = "initialCash_credentials"> Game ID : </label>
+                                        <input type= "password" name = "gameID">
+                                </div>
+
+                                <div>
+                                        <label for initialCash class = "initialCash_credentials"> Initial Cash :</label>
+                                        <input type= "text" name = "initialCash">
+                                </div>
+                                <div>
+                                        <button type = submit id="initialCash_button">
+                                                Set
+                                        </button>
+                                </div>
+                        </form>
+                </div>
+        </body>      
+</html>

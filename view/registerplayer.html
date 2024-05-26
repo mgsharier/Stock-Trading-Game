@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <title>registerplayer</title>
+    <style>
+        #register_player_header {
+            color: rgb(38, 130, 139);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Impact";
+            font-size: 30px; 
+        }
+
+        #register_game_credentials {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            margin-top: 20px; 
+        }
+
+        .register_credentials {
+            font-family: "Courier";
+            font-size: 18px; 
+            color: rgb(28, 17, 95);
+            margin: 5px ; 
+        }
+
+        #register_game_button {
+                margin-top: 10px; 
+                padding: 5px 10px; 
+                background-color: #8d6dcd;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-family: "Courier";
+                margin-left: 10px; 
+                align-self: flex-start; 
+        }
+
+        #register_game_button:hover {
+                background-color: #16d543;
+        }
+        #game_id{
+            color: rgb(246, 49, 9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Arial";
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+        <div>
+                <h1 id="game_id">The Game ID of the game you have created is: 3100</h1>
+        </div>
+<div id="register_player_header">
+    <h2>Register For a Game:</h2>
+</div>
+<div>
+    <form id="register_game_credentials" action="http://localhost:3000/players" method="post">
+        <div>
+            <label class="register_credentials" for="name">Player Name:</label>
+            <input type="text" name="name">
+        </div>
+        <div>
+            <label class="register_credentials" for="password">Password:</label>
+            <input type="password" name="password">
+        </div>
+        <div>
+            <label class="register_credentials" for="gameID">Provide GameID:</label>
+            <input type="password" name="gameID">
+        </div>
+        <div>
+            <button type="submit" id="register_game_button">Join Game</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
